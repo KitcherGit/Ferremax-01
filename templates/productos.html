@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | FERREMAX</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/productos.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="logotipo">
+        <img
+          src="{{ url_for('static', filename='img/logo-FERREMAX-oscuro.png') }}"
+          alt=""
+        />
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="{{ url_for('productos') }}">Productos</a></li>
+        <li><a href="{{ url_for('informacion') }}">Carro</a></li>
+        <li><a href="{{ url_for('contacto') }}">Registro</a></li>
+      </ul>
+    </nav>
+    <h1>Productos</h1>
+    <hr />
+
+    <section>
+      <h1></h1>
+
+      <div class="container-icon">
+        <div class="container-cart-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 14 18"
+            stroke-width="0.9"
+            stroke="currentColor"
+            class="icon-cart">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+              </svg>
+          <div class="count-products">
+            <span id="contador-productos">0</span>
+          </div>
+        </div>
+
+        <div class="container-cart-products hidden-cart">
+          <div class="row-product hidden">
+            <div class="cart-product">
+              <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">Zapatos Nike</p>
+                <span class="precio-producto-carrito">$80</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="cart-total hidden">
+            <h3>Total:</h3>
+            <span class="total-pagar">$200</span>
+            <button id="pagar-btn" class="total-pagar">Pagar</button>
+          </div>
+          <p class="cart-empty">El carrito está vacío</p>
+        </div>
+      </div>
+    </section>
+    <div class="container-items">
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/alicate.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Alicate</h2>
+          <p class="price">$14.990</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/cinta-medir.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Cinta de medir</h2>
+          <p class="price">$4.880</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/escalera.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Escalera</h2>
+          <p class="price">$59.990</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/juego-llaves.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Juego de llaves</h2>
+          <p class="price">$11.890</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/taladro.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Taladro</h2>
+          <p class="price">$75.000</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/candados.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Candado</h2>
+          <p class="price">$2.490</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/serrucho.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Serrucho</h2>
+          <p class="price">$35.560</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/cortacable.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Corta Cable</h2>
+          <p class="price">$13.290</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/cortadora.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Cortadora</h2>
+          <p class="price">$79.390</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/guantes-seguridad.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Guantes de seguridad</h2>
+          <p class="price">$6.500</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/lentes-proteccion.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Lentes de protección</h2>
+          <p class="price">$9.990</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+      <div class="item">
+        <figure>
+          <img
+            src="{{ url_for('static', filename='img/productos/pintura.jpg') }}"
+            alt="producto"
+          />
+        </figure>
+        <div class="info-product">
+          <h2>Pintura</h2>
+          <p class="price">$35.550</p>
+          <button class="btn-add-cart">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+
+    {% for producto in productos %}
+    <div>
+      <h3>{{ producto.nombre }}</h3>
+      <p>{{ producto.descripcion }}</p>
+      <p>Precio: ${{ producto.precio }}</p>
+      <!-- Botón para agregar al carrito -->
+      <a href="{{ url_for('agregar_al_carrito', producto_id=producto.id) }}"
+        >Agregar al carrito</a
+      >
+    </div>
+    {% endfor %}
+
+    <hr />
+    <footer>FERREMAX &copy; Company - {{ now.year }}</footer>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script>
+      // Seleccionar el botón "Pagar" por su ID
+      const pagarBtn = document.getElementById("pagar-btn");
+
+      // Agregar un event listener para el evento de clic en el botón "Pagar"
+      pagarBtn.addEventListener("click", () => {
+        // Redirigir al usuario a la página deseada
+        window.location.href = "{{ url_for('informacion') }}";
+      });
+    </script>
+  </body>
+</html>
+
+{% block footer %} {% endblock %}

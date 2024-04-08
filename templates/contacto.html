@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Contacto
+
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <section class="container-form">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="img-registro-contacto">
+                        <img src="../img/carrousel-img/neon-girl.jpg" alt="img-contacto">
+                    </div>
+                    <form>
+                        <h3>CREA TU CUENTA</h3>
+                        <div class="form-group">
+                            <label for="nombre"></label>
+                            <input type="text" placeholder="Nombre" class="form-control" name="Nombre">
+                            <label for="Apellido"></label>
+                            <input type="text" placeholder="Apellido" class="form-control" name="Apellido">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label for="Nombre de usuario"></label>
+                            <input type="text" placeholder="Nombre de usuario" class="form-control" name="Nombre-usuario">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label for="Correo Electrónico"></label>
+                            <input type="text" placeholder="Correo Electrónico" class="form-control" name="Correo-electrónico">
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label for="option"></label>
+                            <select name="" id="" class="form-control">
+                                <option value="" disabled selected>Género</option>
+                                <option value="male">Hombre</option>
+                                <option value="female">Mujer</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <label for="Contraseña"></label>
+                            <input type="password" placeholder="Contraseña" class="form-control" name="Contraseña">
+                        </div>
+                        <div class="form-wrapper">
+                            <label for="Confirmación de contraseña"></label>
+                            <input type="password" placeholder="Confirmación de contraseña" class="form-control" name="Confirmación-contraseña">
+                        </div>
+                        <button>Registrate</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock %}

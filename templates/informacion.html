@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Información
+
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="carrito">
+    <h1>Carrito de Compras</h1>
+    <div class="lista-productos">
+        <ul>
+            <li>
+                <span class="nombre">Taladro</span>
+                <span class="descripcion">Descripción del Producto 1</span>
+                <span class="valor">$75.000</span>
+            </li>
+            <li>
+                <span class="nombre">Serrucho</span>
+                <span class="descripcion">Descripción del Producto 2</span>
+                <span class="valor">$35.560</span>
+            </li>
+            <li>
+                <span class="nombre">Cortadora</span>
+                <span class="descripcion">Descripción del Producto 3</span>
+                <span class="valor">$79.390</span>
+            </li>
+            <li>
+                <span class="nombre">Lentes de protección</span>
+                <span class="descripcion">Descripción del Producto 4</span>
+                <span class="valor">$9.990</span>
+            </li>
+            <li>
+                <span class="nombre">Guantes de seguridad</span>
+                <span class="descripcion">Descripción del Producto 5</span>
+                <span class="valor">$6.500</span>
+            </li>
+        </ul>
+    </div>
+    <div class="botones">
+        <button type="button" class="btn btn-success">Comprar</button>
+        <button type="button" class="btn btn-danger">Cancelar Pago</button>
+    </div>
+</div>
+
+{% endblock %}
+
+<script>
+    function mostrarOpciones() {
+        var opcion = prompt("¿Prefiere retiro en tienda o despacho?");
+        if (opcion !== null && opcion !== "") {
+            alert("Usted ha seleccionado: " + opcion);
+            // Aquí puedes agregar más acciones si es necesario
+        }
+    }
+</script>

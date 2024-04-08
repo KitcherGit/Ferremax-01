@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>Iniciar Sesión</h1>
+    <form action="/login" method="POST">
+        <div class="form-wrapper">
+            <label for="option"></label>
+            <select name="" id="" class="form-control">
+                <option value="" disabled selected>Tipo de Usuario</option>
+                <option value="cliente">Cliente</option>
+                <option value="administrador">Administrador</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="bodeguero">Bodeguero</option>
+                <option value="contador">Contador</option>
+            </select>
+        </div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Iniciar Sesión</button>
+        <button class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" ><a href="{{ url_for('contacto') }}">Registrarse</a></button>
+    </form>
+
+    <script>
+    function mostrarCampos() {
+        var rol = document.getElementById("rol").value;
+
+        // Ocultar todos los campos primero
+        document.getElementById("clienteCampos").style.display = "none";
+        document.getElementById("vendedorCampos").style.display = "none";
+        document.getElementById("bodegueroCampos").style.display = "none";
+        document.getElementById("contadorCampos").style.display = "none";
+
+        // Mostrar los campos correspondientes según la opción seleccionada
+        if (rol === "cliente") {
+            document.getElementById("clienteCampos").style.display = "block";
+        } else if (rol === "vendedor") {
+            document.getElementById("vendedorCampos").style.display = "block";
+        } else if (rol === "bodeguero") {
+            document.getElementById("bodegueroCampos").style.display = "block";
+        } else if (rol === "contador") {
+            document.getElementById("contadorCampos").style.display = "block";
+        }
+    }
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
