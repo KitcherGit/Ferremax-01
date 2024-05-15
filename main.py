@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, requests
 from datetime import datetime
 import os
 import binascii
+
+
 
 app = Flask(__name__)
 
@@ -45,6 +47,26 @@ def login():
         session['cart'] = []  # Inicializar un carrito de compras vacío
         return render_template('productos.html')  # Redirigir a la página de productos
     return render_template('login.html')
+
+
+const fetch = require('node-fetch');
+
+# API Banco Central
+fetch('https://si3.bcentral.cl/siete/ES/Siete/API')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('La solicitud falló');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Manipula los datos como desees
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error al obtener los datos:', error);
+  });
+
 
 #Aqui termina el LOGIN
 
